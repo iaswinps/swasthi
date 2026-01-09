@@ -1,0 +1,274 @@
+/* 1. Global Resets & Accessibility */
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FDFCF8;
+    color: #334139;
+    line-height: 1.6;
+}
+
+/* 2. Navbar Styling */
+.navbar {
+    background-color: #FDFCF8;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(85, 107, 47, 0.05);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.logo-img {
+    height: 50px; /* Adjust based on your png shape */
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #334139;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #556B2F;
+}
+
+.book-btn {
+    background-color: #556B2F;
+    color: #FDFCF8;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: #3e4f22;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(85, 107, 47, 0.2);
+}
+
+.book-btn:active {
+    transform: scale(0.96);
+}
+
+/* 3. Hero Section & Watermark */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 120px 10%;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background-image: url("swasthi.png"); /* This is your watermark logo */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.05; /* Keep this low so text is readable */
+    z-index: -1;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.accent {
+    color: #556B2F;
+    font-style: italic;
+}
+
+/* 4. Services Section */
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 60px 10%;
+    flex-wrap: wrap; /* Important for mobile */
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    width: 280px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, border 0.3s;
+    border: 1px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: #556B2F;
+}
+
+.icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* 5. Footer */
+.footer {
+    background-color: #334139;
+    color: #FDFCF8;
+    padding: 60px 10% 20px 10%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-info h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(253, 252, 248, 0.1);
+    width: 100%;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* 6. Responsive */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    h1 { font-size: 2.5rem; }
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 100px 10%;
+    background-color: #FDFCF8;
+}
+
+.contact-container {
+    display: flex;
+    gap: 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Stacks on mobile */
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #334139;
+}
+
+.contact-details {
+    margin-top: 40px;
+}
+
+.detail-item {
+    margin-bottom: 25px;
+}
+
+.detail-item strong {
+    display: block;
+    color: #556B2F;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* The Form */
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(51, 65, 57, 0.05);
+}
+
+.contact-form input, 
+.contact-form textarea {
+    padding: 15px;
+    border: 1px solid rgba(85, 107, 47, 0.2);
+    border-radius: 10px;
+    font-family: inherit;
+    background-color: #FDFCF8;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border-color: #556B2F;
+    background-color: white;
+}
+
+.submit-btn {
+    background-color: #556B2F;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #3e4f22;
+    transform: translateY(-2px);
+}
