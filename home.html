@@ -6,13 +6,15 @@
     <title>Swasthi PsychCare | Mental Wellness</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:italic,wght@0,700;1,700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar">
     <div class="nav-container">
         <div class="logo">
-            <a href="index.html">
+            <a href="/home">
                 <img src="swasthi.png" alt="Swasthi PsychCare Logo" class="logo-img">
             </a>
         </div>
@@ -30,26 +32,32 @@
 </nav>
 
     <main>
-        <section class="hero">
+        <section class="hero" data-aos="fade-up" data-aos-duration="1000">
             <h1>Find your balance, <br><span class="accent">reclaim your peace.</span></h1>
             <p>Personalized psychiatric care designed to help you navigate life's complexities.</p>
         </section>
 
         <section id="services" class="services-container">
-            <div class="service-card" data-service="Therapy">
+            <div class="service-card" data-service="Therapy" data-aos="fade-up" data-aos-delay="0">
                 <span class="icon">🌱</span>
                 <h3>Psychotherapy</h3>
                 <p>Supportive talk therapy for emotional growth.</p>
             </div>
             
-            <a href="https://cn360.swasthipsychcare.com" target="_blank" class="service-card" data-service="Medication">
+            <a href="kalavistara" class="service-card" data-service="KalaVistara" data-aos="fade-up" data-aos-delay="100">
+                <span class="icon">🎨</span>
+                <h3>KalaVistara Camp</h3>
+                <p>45-Day Talent Discovery & Exploration Program.</p>
+            </a>
+            
+            <a href="https://cn360.swasthipsychcare.com" target="_blank" class="service-card" data-service="Medication" data-aos="fade-up" data-aos-delay="200">
                 <span class="icon">🧑‍🎓</span>
                 <h3>Career Navigator 360</h3>
                 <p>Navigate Your Strengths. Shape Your Success.</p>
             </a>
         </section>
     </main>
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section" data-aos="fade-in" data-aos-duration="800">
     <div class="contact-container">
         <div class="contact-info">
             <h2>Get in Touch</h2>
@@ -92,5 +100,14 @@
     </div>
 </footer>
     <script src="script.js"></script>
+    
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 50,
+        });
+    </script>
 </body>
 </html>

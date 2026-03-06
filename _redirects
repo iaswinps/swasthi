@@ -1,0 +1,6 @@
+# Redirect root to home
+/  /home  301
+
+# Remove .html extensions (Netlify usually does this automatically with Pretty URLs, but this enforces it)
+/kalavistara  /kalavistara.html  200
+/home  /home.html  200

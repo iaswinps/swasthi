@@ -1,0 +1,297 @@
+/* ======= KALAVISTARA PREMIUM UPGRADES ======= */
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--kv-bg);
+}
+::-webkit-scrollbar-thumb {
+    background: #B89C6A;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #a38755;
+}
+
+/* Subtle Animated Background */
+body {
+    background: linear-gradient(-45deg, #F8F6F0, #ffffff, #F8F6F0, #f2f7f4);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Glassmorphism Header */
+.kv-header {
+    background-color: rgba(248, 246, 240, 0.7) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s ease;
+}
+
+/* Hero Section Enhancements */
+.kv-hero {
+    position: relative;
+    overflow: hidden;
+    background-color: transparent !important;
+}
+
+.kv-hero::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(184, 156, 106, 0.15) 0%, rgba(255,255,255,0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: pulseGlow 8s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+}
+
+.kv-title {
+    background: linear-gradient(45deg, var(--kv-dark-green), #3a6850);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 10px 20px rgba(36, 65, 49, 0.1);
+}
+
+/* Buttons with Glowing Hover */
+.kv-btn-primary {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    box-shadow: 0 4px 15px rgba(36, 65, 49, 0.2);
+}
+
+.kv-btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    transition: all 0.7s ease;
+    z-index: -1;
+}
+
+.kv-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(36, 65, 49, 0.4);
+}
+
+.kv-btn-primary:hover::after {
+    left: 150%;
+}
+
+/* 3D Cards */
+.kv-highlight-card {
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    transform-style: preserve-3d;
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.8);
+}
+
+.kv-highlight-card:hover {
+    transform: translateY(-10px) scale(1.03) rotateX(2deg) rotateY(2deg) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08) !important;
+    border-color: rgba(184, 156, 106, 0.5);
+}
+
+.kv-highlight-card:hover .kv-icon {
+    transform: scale(1.15) rotate(5deg);
+    background-color: var(--kv-gold);
+    color: var(--kv-white);
+    box-shadow: 0 10px 20px rgba(184, 156, 106, 0.3);
+}
+
+.kv-icon {
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+/* Curriculum Dark Neumorphism Cards */
+.kv-curriculum-card {
+    transition: all 0.5s ease-out !important;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.kv-curriculum-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(184, 156, 106, 0.2) 0%, rgba(36, 65, 49, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+}
+
+.kv-curriculum-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3) !important;
+    border-color: rgba(184, 156, 106, 0.4) !important;
+}
+
+.kv-curriculum-card:hover::before {
+    opacity: 1;
+}
+
+.kv-curriculum-card:hover h4 {
+    text-shadow: 0 0 10px rgba(184, 156, 106, 0.5);
+}
+
+.kv-curriculum-card li {
+    transition: color 0.3s ease;
+}
+.kv-curriculum-card:hover li {
+    color: #fff;
+}
+
+/* Glassmorphism Form Container */
+.kv-registration-section {
+    background-color: transparent !important;
+}
+
+.kv-registration-container {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1) !important;
+}
+
+.kv-join-journey {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.kv-join-journey::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(184, 156, 106, 0.2);
+    border-radius: 50%;
+    filter: blur(40px);
+    z-index: -1;
+}
+
+/* Input Form Focus Effects */
+.form-group input:focus, 
+.form-group select:focus, 
+textarea:focus {
+    box-shadow: 0 0 0 3px rgba(36, 65, 49, 0.15);
+    border-color: var(--kv-dark-green) !important;
+    background-color: #fff;
+}
+
+.form-group input, 
+.form-group select, 
+textarea {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Success Card UI */
+.kv-success-card {
+    display: none; /* Flex when active */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(248,246,240,0.9));
+    border-radius: 15px;
+    border: 1px solid rgba(85, 107, 47, 0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+
+.success-icon-wrapper {
+    font-size: 4rem;
+    color: var(--kv-dark-green);
+    margin-bottom: 20px;
+    animation: successPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes successPop {
+    0% { transform: scale(0); opacity: 0; }
+    80% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.kv-success-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--kv-dark-green);
+    margin-bottom: 10px;
+}
+
+.kv-success-card p {
+    color: #555;
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+}
+
+.whatsapp-invite {
+    background: #E8EFEA;
+    padding: 20px;
+    border-radius: 12px;
+    width: 100%;
+    border: 1px dashed rgba(85, 107, 47, 0.3);
+}
+
+.whatsapp-invite p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.kv-btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.kv-btn-whatsapp:hover {
+    background-color: #128C7E;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+    color: white;
+}
+
+.kv-btn-whatsapp i {
+    font-size: 1.2rem;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
