@@ -186,21 +186,25 @@
             <div class="kv-form-container" id="form-wrapper">
                 <h3>Registration Form</h3>
 
-                <!-- Success Message Display (Hidden by default) -->
-                <div id="success-card" class="kv-success-card" style="display: none;">
-                    <div class="success-icon-wrapper">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h4>Registration Successful!</h4>
-                    <p>Welcome to KalaVistara. Your talent discovery journey begins soon.</p>
+                <!-- Success Message Modal Overlay (Hidden by default) -->
+                <div id="success-overlay" class="kv-success-overlay" style="display: none;">
+                    <div class="kv-success-card">
+                        <div class="success-icon-wrapper">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h4>Registration Successful!</h4>
+                        <p>Welcome to KalaVistara. Your talent discovery journey begins soon.</p>
 
-                    <div class="whatsapp-invite">
-                        <p><strong>Next Step:</strong> Please join our official WhatsApp group for important updates,
-                            schedule announcements, and mentor communication.</p>
-                        <a href="https://chat.whatsapp.com/ITK1r3IL9747j78fWuQsP8" target="_blank"
-                            class="kv-btn-whatsapp">
-                            <i class="fab fa-whatsapp"></i> Join WhatsApp Group
-                        </a>
+                        <div class="whatsapp-invite">
+                            <p><strong>Next Step:</strong> Please join our official WhatsApp group for important updates,
+                                schedule announcements, and mentor communication.</p>
+                            <a href="https://chat.whatsapp.com/ITK1r3IL9747j78fWuQsP8" target="_blank"
+                                class="kv-btn-whatsapp">
+                                <i class="fab fa-whatsapp"></i> Join WhatsApp Group
+                            </a>
+                        </div>
+                        
+                        <button type="button" id="closeSuccessBtn" class="kv-btn-secondary" style="margin-top: 25px;">Close</button>
                     </div>
                 </div>
 
@@ -475,14 +479,18 @@
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                 .then(response => {
-                    // Hide the form and the main header text
-                    form.style.display = 'none';
-                    document.querySelector('#form-wrapper h3').style.display = 'none';
-
-                    // Show the success card with a smooth fade in
-                    const successCard = document.getElementById('success-card');
-                    successCard.style.display = 'flex';
-                    successCard.style.animation = 'fadeInUp 0.8s ease forwards';
+                    // Instead of hiding the form, we just reset it and show the modal overlay
+                    // This prevents the page from suddenly shrinking and scrolling down
+                    
+                    // Show the success overlay modal
+                    const successOverlay = document.getElementById('success-overlay');
+                    successOverlay.style.display = 'flex';
+                    
+                    // Add event listener to close button
+                    document.getElementById('closeSuccessBtn').addEventListener('click', function() {
+                        successOverlay.style.display = 'none';
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
 
                     form.reset();
                     submitBtn.textContent = 'Submit Registration';
