@@ -348,3 +348,8 @@ textarea {
     animation: fadeIn 0.8s ease forwards;
     animation-delay: 1.5s;
 }
+
+.interest-icon{
+image-rendering:auto;
+filter:contrast(1.1);
+}
